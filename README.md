@@ -9,11 +9,11 @@ copy ipgeobase folder to /protected/extensions/
 
     Yii::import('ext.ipgeobase.Ipgeobase');
 
-    $ip      = false;    // or string 'xxx.xxx.xxx.xxx'
-    $charset = 'utf-8';  // your server charset, default argument = 'utf-8'
-
-    $geoip   = new Ipgeobase($ip, $charset);
-    $geoip   = new Ipgeobase('192.168.1.1'); // ip = '192.168.1.1', charset = 'utf-8'
+    // ip detected automatically, charset = 'utf-8'
+    $geoip   = new Ipgeobase();
+    
+    // ip = '109.254.49.10', charset = 'ISO-8859-1'
+    $geoip   = new Ipgeobase('109.254.49.10', 'ISO-8859-1');
 
     // $geoip dump
     // header("Content-type: text/plain");print_r($geoip);exit();
