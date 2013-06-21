@@ -8,15 +8,20 @@ Usage
 copy ipgeobase folder to /protected/extensions/
 
     Yii::import('ext.ipgeobase.Ipgeobase');
-
-    // ip detected automatically, charset = 'utf-8'
-    $geoip   = new Ipgeobase();
+    $geoip = new Ipgeobase('109.254.49.10', 'ISO-8859-1');
     
-    // ip = '109.254.49.10', charset = 'ISO-8859-1'
-    $geoip   = new Ipgeobase('109.254.49.10', 'ISO-8859-1');
+    $charset  = $geoip->charset;
+    $ip       = $geoip->ip;
+    $country  = $geoip->country;
+    $city     = $geoip->city;
+    $region   = $geoip->region;
+    $district = $geoip->district;
+    $lat      = $geoip->lat;
+    $lng      = $geoip->lng;
+    
+    // or
+    $geoip = new Ipgeobase(); // ip detected automatically, charset = 'utf-8'
 
-    // $geoip dump
-    // header("Content-type: text/plain");print_r($geoip);exit();
     /*
       [charset]  => utf-8
       [ip]       => 109.254.49.10
